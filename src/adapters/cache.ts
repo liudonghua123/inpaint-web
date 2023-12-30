@@ -15,17 +15,29 @@ function getModel(modelType: modelType) {
     const modelList = [
       {
         name: 'model',
-        url: 'https://huggingface.co/lxfater/inpaint-web/resolve/main/migan.onnx',
+        url: `https://${
+          import.meta.env.VITE_HUGGINGFACE_MIRROR
+            ? import.meta.env.VITE_HUGGINGFACE_MIRROR
+            : 'huggingface.co'
+        }/lxfater/inpaint-web/resolve/main/migan.onnx`,
         backupUrl: '',
       },
       {
         name: 'model-perf',
-        url: 'https://huggingface.co/andraniksargsyan/migan/resolve/main/migan.onnx',
+        url: `https://${
+          import.meta.env.VITE_HUGGINGFACE_MIRROR
+            ? import.meta.env.VITE_HUGGINGFACE_MIRROR
+            : 'huggingface.co'
+        }/andraniksargsyan/migan/resolve/main/migan.onnx`,
         backupUrl: '',
       },
       {
         name: 'migan-pipeline-v2',
-        url: 'https://huggingface.co/andraniksargsyan/migan/resolve/main/migan_pipeline_v2.onnx',
+        url: `https://${
+          import.meta.env.VITE_HUGGINGFACE_MIRROR
+            ? import.meta.env.VITE_HUGGINGFACE_MIRROR
+            : 'huggingface.co'
+        }/andraniksargsyan/migan/resolve/main/migan_pipeline_v2.onnx`,
         backupUrl:
           'https://modelscope.cn/api/v1/models/lxfater/inpaint-web/repo?Revision=master&FilePath=migan_pipeline_v2.onnx',
       },
@@ -37,7 +49,11 @@ function getModel(modelType: modelType) {
     const modelList = [
       {
         name: 'realesrgan-x4',
-        url: 'https://huggingface.co/lxfater/inpaint-web/resolve/main/realesrgan-x4.onnx',
+        url: `https://${
+          import.meta.env.VITE_HUGGINGFACE_MIRROR
+            ? import.meta.env.VITE_HUGGINGFACE_MIRROR
+            : 'huggingface.co'
+        }/lxfater/inpaint-web/resolve/main/realesrgan-x4.onnx`,
         backupUrl:
           'https://modelscope.cn/api/v1/models/lxfater/inpaint-web/repo?Revision=master&FilePath=realesrgan-x4.onnx',
       },

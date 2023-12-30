@@ -37,7 +37,7 @@ function App() {
   })
 
   async function startWithDemoImage(img: string) {
-    const imgBlob = await fetch(`/examples/${img}.jpeg`).then(r => r.blob())
+    const imgBlob = await fetch(`./examples/${img}.jpeg`).then(r => r.blob())
     setFile(new File([imgBlob], `${img}.jpeg`, { type: 'image/jpeg' }))
   }
 
@@ -124,7 +124,7 @@ function App() {
                       >
                         <img
                           className="rounded-md hover:opacity-75 w-auto h-25"
-                          src={`examples/${image}.jpeg`}
+                          src={`./examples/${image}.jpeg`}
                           alt={image}
                           style={{ height: '100px' }}
                         />

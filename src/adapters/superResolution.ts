@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable no-plusplus */
+// @ts-nocheck
 import cv, { Mat } from 'opencv-ts'
+import ort from 'onnxruntime-web'
 import { getCapabilities } from './util'
 import { ensureModel } from './cache'
 

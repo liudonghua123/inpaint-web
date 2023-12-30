@@ -20,7 +20,7 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/migan.onnx`,
-        backupUrl: '',
+        backupUrl: '../models/lxfater/inpaint-web/migan.onnx',
       },
       {
         name: 'model-perf',
@@ -29,7 +29,7 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan.onnx`,
-        backupUrl: '',
+        backupUrl: '../models/andraniksargsyan/migan/migan.onnx',
       },
       {
         name: 'migan-pipeline-v2',
@@ -38,8 +38,7 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan_pipeline_v2.onnx`,
-        backupUrl:
-          'https://modelscope.cn/api/v1/models/lxfater/inpaint-web/repo?Revision=master&FilePath=migan_pipeline_v2.onnx',
+        backupUrl: '../models/andraniksargsyan/migan/migan_pipeline_v2.onnx',
       },
     ]
     const currentModel = modelList[2]
@@ -54,8 +53,7 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/realesrgan-x4.onnx`,
-        backupUrl:
-          'https://modelscope.cn/api/v1/models/lxfater/inpaint-web/repo?Revision=master&FilePath=realesrgan-x4.onnx',
+        backupUrl: '../models/lxfater/inpaint-web/realesrgan-x4.onnx',
       },
     ]
     const currentModel = modelList[0]

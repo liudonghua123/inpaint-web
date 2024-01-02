@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-plusplus */
 import cv, { Mat } from 'opencv-ts'
+import * as ort from 'onnxruntime-web'
 import { ensureModel } from './cache'
 import { getCapabilities } from './util'
 import type { modelType } from './cache'
@@ -149,8 +150,6 @@ function imageDataToDataURL(imageData) {
 }
 
 function configEnv(capabilities) {
-  ort.env.wasm.wasmPaths =
-    'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.3/dist/'
   if (capabilities.webgpu) {
     ort.env.wasm.numThreads = 1
   } else {

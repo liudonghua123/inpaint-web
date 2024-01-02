@@ -11,6 +11,7 @@ export async function saveModel(modelType: modelType, modelBlob: ArrayBuffer) {
 }
 
 function getModel(modelType: modelType) {
+  console.info(`import.meta.env.BASE_URL: ${import.meta.env.BASE_URL}`)
   if (modelType === 'inpaint') {
     const modelList = [
       {
@@ -20,7 +21,9 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/migan.onnx`,
-        backupUrl: '../models/lxfater/inpaint-web/migan.onnx',
+        backupUrl: `${
+          import.meta.env.BASE_URL
+        }/models/lxfater/inpaint-web/migan.onnx`,
       },
       {
         name: 'model-perf',
@@ -29,7 +32,9 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan.onnx`,
-        backupUrl: '../models/andraniksargsyan/migan/migan.onnx',
+        backupUrl: `${
+          import.meta.env.BASE_URL
+        }/models/andraniksargsyan/migan/migan.onnx`,
       },
       {
         name: 'migan-pipeline-v2',
@@ -38,7 +43,9 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan_pipeline_v2.onnx`,
-        backupUrl: '../models/andraniksargsyan/migan/migan_pipeline_v2.onnx',
+        backupUrl: `${
+          import.meta.env.BASE_URL
+        }/models/andraniksargsyan/migan/migan_pipeline_v2.onnx`,
       },
     ]
     const currentModel = modelList[2]
@@ -53,7 +60,9 @@ function getModel(modelType: modelType) {
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/realesrgan-x4.onnx`,
-        backupUrl: '../models/lxfater/inpaint-web/realesrgan-x4.onnx',
+        backupUrl: `${
+          import.meta.env.BASE_URL
+        }/models/lxfater/inpaint-web/realesrgan-x4.onnx`,
       },
     ]
     const currentModel = modelList[0]

@@ -2,7 +2,7 @@
 /* eslint-disable no-plusplus */
 // @ts-nocheck
 import cv, { Mat } from 'opencv-ts'
-import ort from 'onnxruntime-web'
+import * as ort from 'onnxruntime-web'
 import { getCapabilities } from './util'
 import { ensureModel } from './cache'
 
@@ -198,8 +198,6 @@ function configEnv(capabilities: {
   simd: any
   threads: any
 }) {
-  ort.env.wasm.wasmPaths =
-    'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.3/dist/'
   if (capabilities.webgpu) {
     ort.env.wasm.numThreads = 1
   } else {

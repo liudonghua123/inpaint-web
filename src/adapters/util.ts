@@ -41,7 +41,8 @@ export const simd = async () =>
 
 export const getCapabilities = async () => {
   return {
-    webgpu: await checkWebgpu(),
+    // webgpu: await checkWebgpu(),
+    webgpu: false,
     wasm: wasm(),
     simd: await simd(),
     threads: await threads(),

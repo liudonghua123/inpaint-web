@@ -161,6 +161,11 @@ function configEnv(capabilities) {
     }
     ort.env.wasm.proxy = true
   }
+  // set wasm path override
+  ort.env.wasm.wasmPaths = `${window.location.protocol}//${
+    window.location.host
+  }/${import.meta.env.BASE_URL}`
+  console.log('capabilities', capabilities)
   console.log('env', ort.env.wasm)
 }
 const resizeMark = (

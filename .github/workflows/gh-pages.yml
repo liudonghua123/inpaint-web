@@ -25,7 +25,9 @@ jobs:
       - name: Building ...
         run: |
           npm install
-          npm run build
+          # npm run build
+          # overwrite the base config of vite.config.mts
+          npx vite build --base=/inpaint-web/
           touch dist/.nojekyll
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3

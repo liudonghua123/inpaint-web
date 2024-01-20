@@ -16,36 +16,34 @@ function getModel(modelType: modelType) {
     const modelList = [
       {
         name: 'model',
-        url: `https://${
+        backupUrl: `https://${
           import.meta.env.VITE_HUGGINGFACE_MIRROR
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/migan.onnx`,
-        backupUrl: `${
-          import.meta.env.BASE_URL
-        }/models/lxfater/inpaint-web/migan.onnx`,
+        url: `${import.meta.env.BASE_URL}models/lxfater/inpaint-web/migan.onnx`,
       },
       {
         name: 'model-perf',
-        url: `https://${
+        backupUrl: `https://${
           import.meta.env.VITE_HUGGINGFACE_MIRROR
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan.onnx`,
-        backupUrl: `${
+        url: `${
           import.meta.env.BASE_URL
-        }/models/andraniksargsyan/migan/migan.onnx`,
+        }models/andraniksargsyan/migan/migan.onnx`,
       },
       {
         name: 'migan-pipeline-v2',
-        url: `https://${
+        backupUrl: `https://${
           import.meta.env.VITE_HUGGINGFACE_MIRROR
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/andraniksargsyan/migan/resolve/main/migan_pipeline_v2.onnx`,
-        backupUrl: `${
+        url: `${
           import.meta.env.BASE_URL
-        }/models/andraniksargsyan/migan/migan_pipeline_v2.onnx`,
+        }models/andraniksargsyan/migan/migan_pipeline_v2.onnx`,
       },
     ]
     const currentModel = modelList[2]
@@ -55,14 +53,14 @@ function getModel(modelType: modelType) {
     const modelList = [
       {
         name: 'realesrgan-x4',
-        url: `https://${
+        backupUrl: `https://${
           import.meta.env.VITE_HUGGINGFACE_MIRROR
             ? import.meta.env.VITE_HUGGINGFACE_MIRROR
             : 'huggingface.co'
         }/lxfater/inpaint-web/resolve/main/realesrgan-x4.onnx`,
-        backupUrl: `${
+        url: `${
           import.meta.env.BASE_URL
-        }/models/lxfater/inpaint-web/realesrgan-x4.onnx`,
+        }models/lxfater/inpaint-web/realesrgan-x4.onnx`,
       },
     ]
     const currentModel = modelList[0]

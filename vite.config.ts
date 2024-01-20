@@ -1,11 +1,23 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react-swc'
 import eslintPlugin from 'vite-plugin-eslint'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  plugins: [react(), eslintPlugin()],
+  plugins: [
+    react(),
+    eslintPlugin(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'node_modules/onnxruntime-web/dist/*.wasm',
+          dest: './',
+        },
+      ],
+    }),
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
